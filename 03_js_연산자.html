@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8">
+       <title>template</title>
+    <script>
+        // 증감 연산자 : ++, --
+        var num = 100;
+        document.write("num : " + num, "<br>");
+        
+        var res = ++num; //num 값을 1증가시키고 res에 저장.
+        
+        document.write("res : " + res, "<br>");
+        document.write("num : " + num, "<br>");
+        document.write("<hr>");
+        
+        var num = 100; // var사용시 변수 중복선언 가능 (let은 중복선언 불가능.)
+        document.write("num : " + num, "<br>");
+        
+        res = num++; // num값이 연산에 참여하고 후에 1 증가처리된다
+        document.write("res : " + res, "<br>");
+        document.write("num : " + num, "<br>");
+        document.write("<hr>");
+        
+        //----------------------------------------------
+        // 부정 연산자 : ! (not)
+        document.write("true : " + true, "<br>");
+        document.write("@false : " + !false, "<br>");
+        document.write("<hr>");
+        
+        // 산술 연산자 : +, - , * , / ,
+        var num1 = 100;
+        var num2 = 3;
+        document.write("num1 : " + num1, + "num2 :" + num2, "<br>");
+        document.write("num1 + num2 : " + (num1 + num2),"<br>");
+        document.write("num1 - num2 : " + (num1 - num2),"<br>");
+        document.write("num1 * num2 : " + (num1 * num2),"<br>");
+        document.write("num1 / num2 : " + (num1 / num2),"<br>"); // double타입으로 연산.(33.333333333333336)
+        document.write("num1 % num2 : " + (num1 % num2),"<br>");
+        document.write("num1 ** num2 : " + (num1 ** num2),"<br>");
+        document.write("<hr>");
+        
+        
+        //----------------------------------------------------------
+        document.write("<h3>숫자형태의 문자열을 숫자타입 변환</h3>")
+        var str="100"; // 문자열
+        str = str + 1; // 문자열 붙이기 연산처리 - 1001
+        document.write("str : " + str + " type : " + typeof str, "<br>");
+        
+        str = "100";
+       // str: (str * 1) + 100; // 숫자형태 문자열에 곱하기 1연산 : 형변환
+       // str = Number(str) + 200; // Number()메소드 이용
+        str = parseInt(str) + 300;
+        document.write("str : " + str + " type : " + typeof str, "<br>");
+        
+        //--------------------------------------------------------------
+        // 대입연산자 : =, +=, -=, *=, /=, %=, **= (3번 곱하는것 )
+        document.write("<h3>대입연산자 : =, +=,-=, *=, /=, %=, **= </h3>");
+        num = 100;
+        num2 = 3;
+        document.write("num :" + num + " num2 : " + num2, "<br>");
+        
+        var result = num;
+        document.write("result = " + result,"<br>");
+        
+        result += num2; // result = result + num2; 
+        document.write("result += num2 : " + result, "<br>");
+        
+        result -= num2; // result = result + num2; 
+        document.write("result -= num2 : " + result, "<br>");
+        
+        result *= num2; // result = result + num2; 
+        document.write("result *= num2 : " + result, "<br>");
+        
+        result /= num2; // result = result + num2; 
+        document.write("result /= num2 : " + result, "<br>");
+        
+        result %= num2; // result = result + num2; 
+        document.write("result %= num2 : " + result, "<br>");
+        
+        result = 100;
+        result **= num2;
+        document.write("result **= num2 : " + result, "<br>")
+        document.write("<hr><hr>")
+        
+        //------------------------------------------------------------
+        // 비교연산자 : >, < , >=, <=, ==, !=, ===, !==
+        // == : 값 일치 true (!= : 값이 다르면 true) : 값만 확인 "100" == 100 - true
+        // === : 값 일치하고(AND) 타입까지 동일한 경우 true
+        // !== : 값 불일치 또는 (or) 타입이 다를 경우 : true
+        var a = 100; // 숫자
+        var b = 200;
+        var c = "100"; // 문자열
+        var d = "200";
+        document.write("a : " + a + ", b : "+ b, "<br>");
+        document.write("a > b :" + (a > b),"<br>");
+        document.write("a < b :" + (a < b),"<br>");
+        document.write("a>=b :" + (a>=b),"<br>");
+        document.write("a<=b :" + (a<=b),"<br>");
+        
+        document.write("<p>숫자 100과 문자열 '100' 비교(==, !=)</p>");
+        document.write("a : " + a + ",c : " + c + "<br>");
+        document.write("a == c " + (a == c), "<br>"); // 값만 확인
+        document.write("a === c " + (a === c), "<br>"); // 값, 타입까지 확인
+        document.write("a !== c " + (a !== c), "<br>");
+        
+    </script>
+   </head> 
+    <body>
+        
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>    
+    </body>
+</html>
