@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <title>JS 반복문 구구단 (2-9단)</title>
+    <script>
+        // (실습) 테이블 형태의 구구단 작성하기(2-9단)
+
+        document.write("<table border>");
+        document.write("<thead>");
+        document.write("<tr>");
+        for (let i = 1; i <= 9; i++) {
+            document.write("<th>" + 2 + " * " + i + "=" + (2 * i) + "</th>");
+        }
+        document.write("</tr>");
+        document.write("</thead>");
+        document.write("<tbody>");
+
+
+        document.write("<tr>");
+        for (let i = 1; i <= 9; i++) {
+            document.write("<th>" + 3 + " * " + i + "=" + (3 * i) + "</th>");
+        }
+        document.write("</tr>");
+
+        document.write("<tr>");
+        for (let i = 1; i <= 9; i++) {
+            document.write("<th>" + 4 + " * " + i + "=" + (4 * i) + "</th>");
+        }
+        document.write("</tr>");
+
+        document.write("<tr>");
+        for (let i = 1; i <= 9; i++) {
+            document.write("<th>" + 5 + " * " + i + "=" + (5 * i) + "</th>");
+        }
+        document.write("</tr>");
+        document.write("<tr>");
+        for (let i = 1; i <= 9; i++) {
+            document.write("<th>" + 6 + " * " + i + "=" + (6 * i) + "</th>");
+        }
+        document.write("</tr>");
+        
+        document.write("<tr>");
+        for (let i = 1; i <= 9; i++) {
+            document.write("<th>" + 7 + " * " + i + "=" + (7 * i) + "</th>");
+        }
+        document.write("</tr>");
+        document.write("<tr>");
+        for (let i = 1; i <= 9; i++) {
+            document.write("<th>" + 8 + " * " + i + "=" + (8 * i) + "</th>");
+        }
+        document.write("</tr>");
+        document.write("<tr>");
+        for (let i = 1; i <= 9; i++) {
+            document.write("<th>" + 9 + " * " + i + "=" + (9 * i) + "</th>");
+        }
+        document.write("</tr>");
+
+        document.write("</tbody>");
+        document.write("</table>");
+    </script>
+</head>
+
+<body>
+    <h1>구구단 (2-9단)</h1>
+    <table border>
+        <thead>
+            <tr>
+                <th>2*1=2</th>
+                <th>3*1=2</th>
+                <th>4*1=4</th>
+                <th>...</th>
+                <th>9*1=9</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2*2=4</td>
+                <td>3*2=6</td>
+                <td>4*2=8</td>
+                <td>....</td>
+                <td>9*2=18</td>
+            </tr>
+            <tr>
+                <td>2*3=6</td>
+                <td>3*3=9</td>
+                <td>4*3=12</td>
+                <td>....</td>
+                <td>9*3=27</td>
+            </tr>
+            <tr>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+            <tr>
+                <td>2*9=18</td>
+                <td>3*9=27</td>
+                <td>4*9=36</td>
+                <td>....</td>
+                <td>9*9=81</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+</body></html>
