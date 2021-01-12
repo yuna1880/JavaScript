@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8">
+       <title>JS : Object</title>
+    <script>
+        var str = null;
+        document.write("typeof str :" + typeof str, "<br>");
+        document.write("<hr>");
+        
+        
+        //object : 객체 사용법 1
+        //객체의 선언 및 사용법
+        var tv = new Object();
+        document.write("typeof tv :" + typeof tv, "<br>");
+        document.write("<hr>");
+        tv.width = 1500; // tv 객체에 width 속성이 추가되고 값 설정. 
+        tv.height = 700;
+        tv.color = "black";
+        
+        //메소드
+        tv.on = function(){
+            document.write("TV전원 ON","<br>");
+        };
+        
+        tv.off = function(){
+            document.write("TV전원 OFF","<br>");
+        };
+        
+        //객체 기능 사용 - 속성, 기능(메소드, function)
+        
+        document.write(tv.width,"<br>");
+        document.write(tv.height,"<br>");
+        document.write(tv.color,"<br>");
+        document.write("<hr>");
+        
+        document.write(tv["width"],"<br>"); // string 은 []  안에 작성도 가능.
+        document.write(tv["height"],"<br>");
+        
+        //객체 기능 사용
+        tv.on();
+        tv.off();
+        
+        //--------------------------------------------
+        // 속성의 유무 확인 : 속성명 in 객체 - 있으면 true, 없으면 false
+        document.write("tv에 color 속성 유무 : " + ("color" in tv), "<br>");
+        document.write("tv에 weight 속성 유무 : " + ("weight" in tv), "<br>");
+        
+        //속성 삭제: delete 객체.속성명
+        delete tv.color;
+        document.write("tv에 color 속성 유무 : " + ("color" in tv), "<br>");
+        
+        //속성 추가 또는 수정
+        tv.color = "gray";
+        document.write("tv.color :" + tv.color, "<br>");
+        tv.color = "yellow";
+        document.write("tv.color :" + tv.color, "<br>");
+        document.write("<hr>");
+        
+        
+        
+        //-------------------------------------- css랑 비슷! ; -> ,
+        
+        // 객체 선언 및 생성방식 2 -> 선언과 동시에 속성, 기능 만든다.
+        //{ 속성명: 값1, 속성명 : 값2, ..., 속성명n : 값n }
+        var tv2 = {
+            width : 1100,
+            height : 710,
+            color : "검정",
+            on : function(){
+                document.write("<p>전원 켜짐!!!</p>")
+            },
+            off : function(){
+                document.write("<p>전원 꺼짐!!!</p>")
+            },
+            size : function(){ // this 키워드 사용해서 객체 내부에 있는 속성값 사용.
+            document.write("<p>크기 :" + this.width +
+                    "x" + this.height + "</p>"); // this -> 현재 객체의 값을 참조.
+            },
+        };
+        //객체 사용
+        document.write("tv2.width : " + tv2.width);
+        document.write("tv2.height : " + tv2.height);
+        //tv.size();
+        tv.on();
+        tv.off();
+        
+        
+        //---------------------------------------------------------
+        //객체의 속성명 참조
+        
+        for(let prop in tv2){
+            document.write("<br>");
+        }
+        document.write("<hr>");
+        
+        //객체의 속성에 저장되어 있는 값 확인
+        for(let prop in tv2){
+            document.write("tv2[" +prop+ "] : " + tv2[prop], "<br>");
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </script>
+   </head> 
+    <body>
+        
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>    
+    </body>
+</html>

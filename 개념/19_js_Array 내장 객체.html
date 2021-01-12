@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <title>Array</title>
+    <script>
+        /*
+     배열 생성방법 3가지
+     1. var arr1 = new Array();
+     2. var arr2 = new Array("홍길동", 27, true);
+     3. var arr3 = ["홍길동", 27, true];
+     */
+
+        // 1. var arr1 = new Array();
+        var arr1 = new Array();
+        document.write("arr1.length : " + arr1.length, "<br>");
+        arr1[0] = "권유나";
+        arr1[1] = 27;
+        arr1[2] = true;
+        document.write("arr1.length : " + arr1.length, "<br>");
+
+        document.write(arr1[0], "<br>"); //데이터 사용
+        document.write(arr1[1], "<br>");
+        document.write(arr1[2], "<br>");
+        document.write(arr1[3], "<br>"); //데이터가 없으면 undefined
+
+        // 2. var arr2 = new Array("홍길동", 27, true);
+        var arr2 = new Array("권유나2", 27, true);
+        document.write("arr2.length : " + arr2.length, "<br>");
+        document.write(arr2[0], "<br>"); //데이터 사용
+        document.write(arr2[1], "<br>");
+        document.write(arr2[2], "<br>");
+        document.write(arr2[3], "<br>"); //데이터가 없으면 undefined
+
+        // 3. var arr3 = ["홍길동", 27, true];
+        var arr3 = ["홍길동", 27, true];
+        document.write("arr3.length : " + arr3.length, "<br>");
+        document.write(arr3[0], "<br>");
+        document.write(arr3[1], "<br>");
+        document.write(arr3[2], "<br>");
+
+        //-----------------------------------------
+        // 배열에 있는 전체 데이터 확인하기 위한 반복문
+        // 일반 for문으로 데이터 조회
+        for (let i = 0; i < arr3.length; i++) {
+            document.write(arr3[i], "<br>");
+        }
+
+        // 개선된 for문 형태 (for - in형태) 로 전체 데이터 조회
+        for (let idx in arr3) {
+            document.write("arr3[" + idx + "] : " + arr3[idx], "<br>");
+        }
+
+        // (for - of형태) 로 전체 데이터 조회 (iterable)
+        for (let arrValue of arr3) {
+            document.write(arrValue, "<br>");
+        }
+        document.write("<hr>");
+
+        //----------------------------------------------------------------
+        
+        // 5번 열에만 데이터 추가 (3,4 - 비었음)
+        document.write("arr3.length : " + arr3.length, "<br>");
+        arr3[5] = "권유나";
+        document.write("arr3.length : " + arr3.length, "<br>");
+        document.write("arr3 : " + arr3);
+        //----------------------------------------------------------------
+
+        for (let i = 0; i < arr3.length; i++) { //빈 데이터는 undefined로 출력.
+            document.write(arr3[i], "<br>");
+        }
+
+        //for - in으로 조회시, undefined로 데이터는 안보여진다.
+        for (let idx in arr3) {
+            document.write("arr3[" + idx + "] : " + arr3[idx], "<br>");
+        }
+
+        //for - of으로 조회시, undefined로 데이터는 보여진다.
+        for (let arrValue of arr3) {
+            document.write(arrValue, "<br>");
+        }
+
+        for (let arrValue of arr3) {
+            if (arrValue == undefined) continue; //조건문 + continue 처리시 undefined로 데이터는 안보여진다.
+            document.write(arrValue, "<br>");
+        }
+
+        for (let arrValue of arr3) {
+            if (arrValue != undefined) { //조건문 + continue 처리시 undefined로 데이터는 안보여진다.
+                document.write(arrValue, "<br>");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>
+</body></html>
