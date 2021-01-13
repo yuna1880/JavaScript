@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="utf-8">
+       <title>template</title>
+    <script>
+        
+        /*
+        
+        Browser Object Model (BOM)
+        window 객체의 메소드(function)
+        open() : 새로운 창을 열때 사용
+        open(URL, 명칭, 출력형태옵션)
+        <출력형태옵션>
+        width, height, top, left : 크기, 위치지정(픽셀)
+        location : 주소 입력창 유무(yes, no, 1,0)
+        menubar : 메뉴바 유무(yes, no, 1,0)
+        resizable : 크기조절 허용여부(yes, no, 1,0)
+        status : 상태표시줄 유무(yes, no, 1,0)
+        toolbar : 툴바 유무(yes, no, 1,0)
+        scarollbar : 스크롤바 표시 여부(yes, no, 1,0)
+        
+        //윈도우 객체는 최상위 객체이다!!
+        
+        */
+        function windowOpen(){
+            alert("windowOpen 실행");
+            var pop = window.open("https://www.naver.com/","pop1","width=400,height=250,top=100,left=150");
+                                               //주소 / 팝업창 이름
+        }
+        
+         function windowOpen(){
+            alert("windowOpen 실행");
+            var pop = window.open("https://www.daum.net/","pop1","width=400,height=250,top=100,left=150,menubar=1,status=1,toolbar=1,location=1");
+                                               //주소 / 팝업창 이름
+        }
+        
+        function windowOpen_coffee(){
+                //alert("windowOpen_coffee() 실행");
+                let coffee = window.open("26_js_BOM_window-close.html","coffee","width=400,height=250,top=100,left=150,menubar=1,status=1,toolbar=1,location=1");
+            }                       
+        
+    </script>
+   </head> 
+    <body>
+       <h2>Bom window.open()</h2>
+        <!-- 버튼을 누르면 클릭이벤트로 인해 위의 windowOpen() 함수 호출 -->
+        <button onclick="windowOpen()">Naver 창 열기</button>
+         <button onclick="windowOpen_coffee()">커피한잔</button>
+          
+           
+             
+    <br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br>    
+    </body>
+</html>

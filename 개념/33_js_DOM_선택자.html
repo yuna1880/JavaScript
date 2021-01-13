@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="utf-8">
+    <title>DOM 선택 id, class, tag명</title>
+    <script>
+        /*
+        DOM 객체 선택시 사용할 메소드
+        document.getElementById("id명") : id 속성 요소 1개 리턴
+        document.getElementsByTagName('태그명') : 태그명에 해당하는 요소들 리턴(배열형태)
+        document.getElementsByClassName('클래스명') : class속성명에 해당하는 요소들 리턴(배열형태)
+        ----------------------
+        document.querySelector("선택자") : 선택자에 해당하는 첫번째 요소(단수)
+        document.querySelectorAll("선택자") : 선택자에 해당하는 첫번째 요소(배열형태)
+        */
+
+
+        //html요소를 못찾음. 읽고 해석되기 전이라서 콘솔에는 null리턴.
+        //1) document.getElementById("id명") : id 속성 요소 1개 리턴
+        var title = document.getElementById("title"); // 타이틀 가지고 객체 찾는다
+        console.log("script 시작지점 title: " + title); // null;
+
+
+        //스크립트는 head 영역에 모아 작성한다.......-> 헤드에서 DOM컨트롤?
+        //브라우저 문서가 모두 로딩 완료되면 발생하는 이벤트 (onload)에 콜백함수 연결해주기. (그 시점에 이벤트 발생하도록!)
+        window.onload = function() {
+
+            //1) document.getElementById("id명")
+            var title = document.getElementById("title"); // 타이틀 가지고 객체 찾는다
+            console.log("onload 이벤트 title: " + title);
+
+            //document.getElementById("title").style.color = "red"; //컬러 레드 적용...효율적이지 않음.
+            //            title.style.color = "pink";
+            title.classList.add("pink");
+            title.style.backgroundColor = "yellow"; // CSS : background-color 자바스트립트로 처리하는 css는 인라인 방식으로 처리.
+
+            //2) document.getElementsTagName('태그명') : 태그명에 해당하는 요소들 리턴(배열형태)    
+            console.log(document.getElementsByTagName("h1")); //1개밖에 없지만 , 배열형태로 넘어온다.
+            document.getElementsByTagName("h1")[0].style.color = "red"; //배열형태라서 [0]이렇게 넣어줘야한다.
+
+            //3) document.getElementsByClassName('클래스명') : class 요소들 리턴(배열형태)
+            var clFoodList = document.getElementsByClassName("foodList");
+            clFoodList[0].style.backgroundColor = "magenta";
+            clFoodList[1].style.backgroundColor = "pink";
+
+            //--------------------------------------------------------------------------------------
+            //id명으로 찾기
+            var div1 = document.getElementById("food_1");
+            div1.style.backgroundColor = "orange";
+            div1.style.border = "2px solid black";
+
+            //태그명으로 찾기
+            var list = document.getElementsByTagName("li");
+            list[2].style.backgroundColor = "gray";
+
+            //---------------------------------------------------------------------------------------
+            //체이닝 방식으로 연속 작성
+            var foodList = document.getElementById("food_1")
+                .getElementsByTagName("li")[1]; // 불고기
+            foodList.style.backgroundColor = "aqua";
+            foodList.style.color = "red"; // 불고기 글씨색 red로!!
+
+
+            //---------------------------------------------------------------------------------------
+            //querySelector("선택자") : 선택자에 의해 선택된 첫번째 요소 리턴
+            var selOne = document.querySelector("div > h2"); //div의 자식 h2 1개만 선택. (querySelector(단수))
+            selOne.style.backgroundColor = "gray";
+
+            //querySelectorAll("선택자") : 선택자로 선택된 모든 요소(배열)
+            var selAll = document.querySelectorAll("div > h2"); //div의 자식 h2 전부 선택. (querySelector(복수))
+            selAll[0].style.border = "3px solid blue";
+            selAll[1].style.border = "3px solid blue"; //한번에 선택...?하는법? -> 반복문.
+
+
+//            for (let i = 0; i < selAll.length; i++) {
+//                selAll[i].style.color = "red";
+//            }
+
+        };
+
+        function toggleColor() {
+            var title = document.getElementById("title");
+            title.classList.toggle("pink");
+        }
+        
+    </script>
+    <style>
+        /*비교용! 스타일에서는 둘 다 선택된다.*/
+        div>h2 {
+            font-size: 3em;
+        }
+
+        .pink {
+            color: pink;
+            border: 10px solid pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>좋아하는 음식</h1>
+    <h2>한식, 중식</h2>
+    <div id="food_1">
+        <h2 id="title">한식</h2>
+        <ol class="foodList">
+            <li>
+                <a href="#">김치</a>
+            </li>
+            <li>불고기</li>
+            <li>비빔밥</li>
+        </ol>
+    </div>
+    <div id="food_2">
+        <h2>양식</h2>
+        <ol class="foodList">
+            <li>돈까스</li>
+            <li>파스타</li>
+        </ol>
+    </div>
+
+    <button onclick="toggleColor()">색바꾸기</button>
+
+    <script>
+        //아래에 있는 스크립트는 .......html 읽고 실행되도록
+        var title = document.getElementById("title"); // 타이틀 가지고 객체 찾는다
+        console.log("body끝 title: " + title);
+    </script>
+
+
+</body></html>
