@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>자동차 견적</title>
+    <link rel="stylesheet" href="css/car.css">  
+    <script src="js/car.js">
+    </script>
+    
+</head>
+
+<body>
+    <div id="carZone">
+        <h1>자동차 견적</h1>
+        <p><img src="images/%EC%BF%A0%ED%8E%98.png" alt="자동차이미지"></p>
+        <table id="car">
+            <colgroup>
+                <col width="50%">
+                <col width="30%">
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>옵션</th>
+                    <th>추가가격</th>
+                    <th>선택여부</th>
+                </tr>
+            </thead>
+            <tbody>
+                <form name="frm1">
+                    <tr>
+                        <td>인조가죽시트</td>
+                        <td>250000</td>
+                        <td>
+                            <!-- 체크박스 인조가죽시트 -->
+                            <input type="checkbox" value="250000" id="opt1" class="opt" name="opt1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>네비게이션</td>
+                        <td>300000</td>
+                        <td>
+                            <!-- 체크박스 네비게이션 -->
+                            <input type="checkbox" value="300000" id="opt2" class="opt" name="opt2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>썬루프</td>
+                        <td>440000</td>
+                        <td>
+                            <!-- 체크박스 썬루프 -->
+                            <input type="checkbox" value="440000" id="opt3" class="opt" name="opt3">
+                        </td>
+                    </tr>
+                </form>
+            </tbody>
+            <tfoot>
+                <form name="frm2">
+                    <tr>
+                        <td id="totalTxt">차량금액(옵션포함)</td>
+                        <td colspan="2">
+                            <input type="text" value="0" id="total" disabled readonly>
+                        </td>
+                    </tr>
+                </form>
+            </tfoot>
+        </table>
+    </div>
+
+</body>
+
+</html>
